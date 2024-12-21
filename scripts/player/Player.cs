@@ -453,7 +453,7 @@ public partial class Player : CharacterBody3D
 			vec3_normalize(ref lurch_direction);
 
 			// not very sure of what on earth this line is calculating
-			Vector3 lurch_vector = current_direction * before_speed + lurch_direction * max;
+			Vector3 lurch_vector = current_direction * before_speed + lurch_direction * max * settings.sv.lurch_strength;
 
 			// original algorithm essentially did an xz_length calculation
 			if (xz_length_vec3(lurch_vector) > before_speed)
